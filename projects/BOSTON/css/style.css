@@ -1,0 +1,425 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body 
+{
+  list-style: none;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1, h2
+{
+  font-size: x-large;
+  display: flex;
+  border-bottom: solid 3px maroon;
+  height: 50px;
+  width: 100%;
+  margin: 0px 0px 15px 0px;
+}
+
+body > main.two > section > div:nth-child(1) > h1 > strong
+{
+  color: maroon;
+}
+
+figure
+{
+  margin: 0;
+  padding: 0;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/*HEADER-START*/
+
+header 
+{
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: black;
+  height: 50px;
+  width: 100%;
+  margin: 0px 0px 108px 0px;
+}
+
+header > section
+{
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+}
+
+section > span
+{
+  font-size: xx-large;
+}
+
+header > nav
+{
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+}
+
+nav > ul
+{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 85%;
+  justify-content: space-around;
+  padding: 0;
+}
+
+body > header > section > span > em > strong > strong
+{
+  color: maroon;
+}
+
+/*HEADER-END*/
+
+/*MAIN-START*/
+
+main
+{
+  display: flex;
+  justify-content: space-evenly;
+  /* border: solid black 1px; */
+  height: 600px;
+  width: 100%;
+  padding: 0px 30px 0px 30px;
+}
+
+body > .one > section.mainSecLeft > div:nth-child(1)
+{
+  display: flex;
+    border-bottom: solid 3px maroon;
+    height: 50px;
+    width: 100%;
+    margin: 0px 0px 15px 0px;
+}
+
+.mainSecLeft
+{
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* border: dotted red 1px; */
+    width: 60%;
+}
+
+.mainSecDivLeft
+{
+  display: flex;
+  height: 600px;
+  width: 100%;
+}
+
+body > .one > section.mainSecLeft > div.mainSecDivLeft > div:nth-child(1)
+{
+  display: flex;
+  height: 400px;
+  width: 100%;
+}
+
+body > .one > section.mainSecLeft > div.mainSecDivLeft > div:nth-child(2)
+{
+  display: flex;
+  height: 200px;
+  width: 100%;
+}
+
+.mainSecDivLeft
+{
+  display: flex;
+  flex-direction: column;
+  /* border: dotted red 1px; */
+  height: 550px;
+  width: 60%;
+}
+
+.mainSecDivRight
+{
+  display: flex;
+  flex-direction: column;
+  /* border: dotted red 1px; */
+  height: 550px;
+  width: 30%;
+}
+
+.mainSecDivFigureTop
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  /* border: dotted blue 1px; */
+}
+
+.mainSecDivFigureTop > div
+{
+  display: flex;
+    height: 250px;
+    width: 100%;
+    background-color: aqua;
+}
+
+body > .one > section.mainSecLeft > div.mainSecDivLeft > figure > figcaption
+{
+  font-size: x-large;
+}
+
+.mainSecDivFigureBottom
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  /* border: dashed blue 1px; */
+}
+
+.mainSecDivFigureBottom > div
+{
+  display: flex;
+    height: 150px;
+    width: 97%;
+    background-color: greenyellow;
+}
+
+.mainSecRight
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: dotted red 1px; */
+  height: 600px;
+  width: 30%;
+}
+
+.mainSecRight > .mainSecDivRight
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+body > .one > section.mainSecRight > div.mostPopular > ol
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: small;
+  height: 370px;
+  padding: 0;
+  margin: 0;
+}
+
+body > .one > section.mainSecRight > div.mostPopular > ol > li
+{
+  display: flex;
+  flex-direction: row;
+  height: 54px;
+  border-bottom: 1px grey solid;
+}
+
+.mainSecDivRight > article
+{
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  height: 75px;
+  width: 100%;
+  /* border: dashed green 1px; */
+}
+
+.mainSecDivRight > article span
+{
+  color: maroon;
+}
+
+body > .one > section.mainSecRight > aside
+{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+body > .one> section.mainSecRight > aside > div
+{
+    background-color: red;
+    height: 175px;
+    width: 80%;
+}
+
+/*MAIN-END*/
+
+/*MAIN2-START*/
+
+.two
+{
+  display: flex;
+  /* border: solid black 1px; */
+  height: 500px;
+  width: 100%;
+  margin: 30px 0px 0px 0px;
+  padding: 0px 30px 0px 30px;
+}
+
+.two > section
+{
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 65%;
+  margin: 0px 0px 0px -300px;
+
+}
+
+.two > section > div
+{
+  display: flex;
+  /* border-bottom: solid 3px maroon; */
+  /* border: dotted red 1px; */
+  height: 50px;
+  width: 100%;
+  /* margin: 0px 0px 15px 0px; */
+  border-bottom: 1px grey solid;
+}
+
+body > main.two > section > div:nth-child(2)
+{
+  display: flex;
+  flex-direction: column;
+  /* border: dotted red 1px; */
+  height: 450px;
+   width: 50%;
+}
+
+body > main.two > section > div:nth-child(3)
+{
+  display: flex;
+  flex-direction: column;
+  /* border: dotted red 1px; */
+  height: 450px;
+   width: 50%;
+}
+
+body > main.two > section > div:nth-child(2) > figure > div
+{
+  background-color: maroon;
+  height: 300px;
+  width: 100%
+}
+
+body > main.two > section > div:nth-child(2) > figure > figcaption
+{
+  font-size: xx-large;
+}
+
+body > main.two > section > div:nth-child(3) > ul
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: small;
+  list-style: none;
+  height: 370px;
+  padding: 0px 0px 0px 36px;
+  margin: 0;
+}
+body > main.two > section > div:nth-child(1) > a
+{
+  padding: 0px 588px 0px 0px;
+  color: grey;
+}
+
+body > main.two > section > div:nth-child(3) > ul > li
+{
+  border-bottom: 1px solid grey;
+  padding: 0px 0px 30px 0px;
+}
+
+body > main.two > section > div:nth-child(1) > h1
+{
+  border-bottom: 0;
+}
+
+/*MAIN2-END*/
+
+/*FOOTER-START*/
+
+
+footer 
+{
+  display: flex;
+  height: 150px;
+  width: 100%;
+  margin: 21px 0px 0px 0px;
+}
+
+footer > section, footer > section + section
+{
+  height: 150px;
+  width: 50%;
+}
+
+body > footer > section:nth-child(2) > span
+{
+  font-size: small;
+  align-self: flex-end;
+}
+
+footer > section + section
+{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.fa-solid, .fas {
+  font-weight: 900;
+  color: maroon;
+  font-size: xxx-large;
+  align-self: flex-end;
+}
+
+.fa-brands, .fab {
+  font-weight: 900;
+  color: maroon;
+  font-size: xxx-large;
+  align-self: flex-end;
+}
+
+
+/*FOOTER-END*/
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

@@ -1,0 +1,358 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  background-color: rgb(25 25 0);
+  list-style: none;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html
+{
+  scroll-behavior: smooth;
+}
+body 
+{
+  margin: auto;
+}
+
+section 
+{
+  display: flex;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.border
+{
+  border: white dotted 1px;
+}
+
+/******************************************
+/* NAV
+/*******************************************/
+
+nav
+{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav a, span
+{
+  color: white;
+  text-decoration: none;
+}
+
+nav span
+{
+  margin-block-start: 0.1em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-end: 40px;
+}
+
+nav ul
+{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  /* margin-block-start: 0.5em;
+  margin-block-end: 0.1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px; */
+}
+
+nav section
+{
+  width: 100%;
+  display: flex;
+}
+
+/******************************************
+/* MAIN1
+/*******************************************/
+
+#main1
+{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: .5em;
+}
+
+#main1 > p
+{
+  display: flex;
+  width: 100%;
+  padding: 0.25em 0em 0.25em 0em;
+  margin: 0;
+}
+
+#main1 > p + p
+{
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  margin: 0;
+}
+
+#main1 > div
+{
+  width: 100%;
+  display: flex;
+  padding: 0.5em 0em 0.5em 0em;
+}
+
+#myMug
+{
+  max-width: 50%;
+  height: auto;
+  border-radius: 5%;
+}
+
+#main1 > div > p
+{
+  width: 50%;
+  margin: 12px 56px 12px 56px;
+}
+
+/******************************************
+/* MAIN2
+/*******************************************/
+
+#main2
+{
+  width: 100%;
+  display: flex;
+  padding: 0.5em 0em 0.5em 0em;
+  flex-direction: column;
+}
+
+#main2 > div:nth-child(1)
+{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5em;
+  border: white dotted 1px;
+}
+
+#main2 p 
+{
+  margin: 12px 56px 12px 56px;
+}
+
+figure
+{
+  width: 50%;
+  margin: 0;
+  padding: 1em 0em 1em 0em;
+  
+}
+
+figure img, a
+{
+  display: flex;
+  width: 100%;
+  border-radius: 5%;
+}
+
+figcaption
+{
+  padding: .5em;
+}
+
+#main2 > .project
+{
+  width: 100%;
+  display: flex;
+  padding: 0.5em;
+}
+
+#main2 > div > ul
+{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0px 36px 0px 36px;
+}
+
+img.grayscale /*{ https://www.karlhorky.com/2012/06/cross-browser-image-grayscale-with-css.html */
+{ 
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+  -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+  -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+}
+
+img.grayscale:hover {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(0%);
+}
+
+/******************************************
+/* MAIN3
+/*******************************************/
+
+#main3
+{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#main3 > div.border
+{
+  width: 100%;
+  display: flex;
+}
+
+#main3 > div.border > ul
+{
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  padding: 0px 36px 0px 36px;
+}
+
+#main3 > div:nth-child(2) > ul
+{
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  padding: 0;
+}
+
+#main3 > div:nth-child(2) > ul > a
+{
+  width: 7%;
+  padding: 0px 12px 0px 12px;
+}
+
+#main3 > div:nth-child(2) > span:nth-child(1) > a
+{
+  font-style: italic;
+  text-decoration: underline;
+}
+.contacts
+{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: .5em;
+}
+
+#fname, #lname
+{
+  width: 48%;
+  margin: 2px;
+  resize: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+textarea 
+{
+  width: 100%;
+  min-height: 100px;
+  resize: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+#the-count 
+{
+  float: right;
+  padding: 0.5rem;
+}
+
+#the-count > span
+{
+  font-size: medium;
+  color: grey;
+}
+
+#submitButton
+{
+  width: 98%;
+  resize: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+/******************************************
+/* FOOTER
+/*******************************************/
+
+footer
+{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer > section
+{
+  width: 33.33333%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+footer section
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+body > footer > section:nth-child(2) > a
+{
+  width: 1%;
+  font-size: xx-large;
+  align-self: center;
+
+}
+
+body > footer > section:nth-child(1) > span
+{
+  display: flex;
+  align-items: center;
+}
+
+.fa-brands, .fab 
+{
+  font-weight: 400;
+  font-size: xx-large;
+}
