@@ -1,166 +1,995 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-  	<meta charset="utf-8">
-  	<meta name="description" content="Your description goes here">
-  	<meta name="keywords" content="one, two, three">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>R&y</title>
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<header id = "top">
-			<nav>
-				<section class = "border">
-					<ul>
-						<a href="/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/mullings2023a_portfolio/index.html">Home</a>
-						<a href="#main1">About</a>
-						<a href="#main2">Projects</a>
-						<a href="img/bjmullings-resume2023.pdf">Resume</a>
-						<a href="#main3">Contact</a>
-					</ul>
-				</section>
-			</nav>
-		</header>
-		<main>
-			<section id = "main1">
-				<p>
-					Greetings, loved ones.<br>
-					I'm R&y.<br>
-				</p>
-				<p>
-					Like, Randy
-				</p>
-				<div>
-					<img id ="myMug"src="img/headshot.jpeg" alt ="My pretty mug."><img>
-					<p>
-						I'm Randy, a software developer who loves to design.<br>
-						<br> 
-						I create cohesive and simple websites and projects using Javascript, React, and Node for a clean and pleasant finish.<br> 
-						<br>
-						In my free time, I love to be creative, whether it's making music, art, or writing.<br> 
-						<br>
-						I want to combine my skills to make products that are both functional and visually appealing.<br>
-						<br> 
-						Let's collaborate!
-					</p>
-				</div>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Portfolio">
+	<meta name="keywords" content="one, two, three">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>R&y</title>
+
+	<!-- external CSS link -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<style>
+		* {
+			box-sizing: border-box;
+			background-color: rgb(25 25 0);
+			list-style: none;
+			color: white;
+			font-family: 'Courier New', Courier, monospace;
+		}
+
+		/* Clear fix hack */
+		.clearfix:after {
+			content: ".";
+			display: block;
+			clear: both;
+			visibility: hidden;
+			line-height: 0;
+			height: 0;
+		}
+
+		.clear {
+			clear: both;
+		}
+
+		/******************************************
+/* BASE STYLES
+/*******************************************/
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: auto;
+		}
+
+		section {
+			display: flex;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+
+		/******************************************
+/* LAYOUT
+/*******************************************/
+		.border {
+			border: white dotted 1px;
+		}
+
+		/******************************************
+/* NAV
+/*******************************************/
+		#top {
+			margin-bottom: 60px;
+		}
+		nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			background-color: rgb(25 25 0);
+			z-index: 9999;
+		}
+
+		nav a,
+		span {
+			color: white;
+			text-decoration: none;
+		}
+
+		nav span {
+			margin-block-start: 0.1em;
+			margin-block-end: 0.5em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			padding-inline-end: 40px;
+		}
+
+		nav ul {
+			width: 50%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		nav section {
+			width: 100%;
+			display: flex;
+		}
+
+		/* Hamburger menu styles */
+		.hamburger {
+			display: none;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			width: 40px;
+			height: 30px;
+			margin-right: 20px;
+		}
+
+		.hamburger .bar {
+			width: 100%;
+			height: 3px;
+			background-color: white;
+			margin-bottom: 5px;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		/* Responsive styles */
+		@media (max-width: 768px) {
+			nav ul {
+				display: none;
+				flex-direction: column;
+				align-items: center;
+				padding: 0;
+			}
+
+			nav ul li {
+				width: 100%;
+				text-align: center;
+				margin: 10px 0;
+			}
+
+			.hamburger {
+				display: flex;
+			}
+
+			.hamburger.open .bar:nth-child(2) {
+				opacity: 0;
+			}
+
+			.hamburger.open .bar:nth-child(1) {
+				transform: translateY(8px) rotate(45deg);
+			}
+
+			.hamburger.open .bar:nth-child(3) {
+				transform: translateY(-8px) rotate(-45deg);
+			}
+		}
+
+		@media (min-width: 769px) {
+			.hamburger {
+				display: none;
+			}
+
+			nav ul {
+				display: flex;
+			}
+		}
+
+		/******************************************
+/* MAIN1
+/*******************************************/
+
+		#main1 {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			padding: .5em;
+		}
+
+		#main1>p {
+			display: flex;
+			width: 100%;
+			padding: 0.25em 0em 0.25em 0em;
+			margin: 0;
+		}
+
+		#main1>p+p {
+			display: flex;
+			width: 100%;
+			justify-content: end;
+			margin: 0;
+		}
+
+		#main1>div {
+			width: 100%;
+			display: flex;
+			padding: 0.5em 0em 0.5em 0em;
+		}
+
+		#myMug {
+			max-width: 50%;
+			height: auto;
+			border-radius: 5%;
+		}
+
+		#main1>div>p {
+			width: 50%;
+			margin: 12px 56px 12px 56px;
+		}
+
+		/******************************************
+/* MAIN2
+/*******************************************/
+
+		#main2 {
+			width: 100%;
+			display: flex;
+			padding: 0.5em 0em 0.5em 0em;
+			flex-direction: column;
+		}
+
+		#main2>div:nth-child(1) {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0.5em;
+			border: white dotted 1px;
+		}
+
+		#main2 p {
+			margin: 12px 56px 12px 56px;
+		}
+
+		figure {
+			width: 50%;
+			margin: 0;
+			padding: 1em 0em 1em 0em;
+
+		}
+
+		figure img,
+		a {
+			display: flex;
+			width: 100%;
+			border-radius: 5%;
+		}
+
+		figcaption {
+			padding: .5em;
+		}
+
+		#main2>.project {
+			width: 100%;
+			display: flex;
+			padding: 0.5em;
+		}
+
+		#main2>div>ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			text-decoration: none;
+			padding: 0px 36px 0px 36px;
+		}
+
+		img.grayscale
+
+		/*{ https://www.karlhorky.com/2012/06/cross-browser-image-grayscale-with-css.html */
+			{
+			filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+			/* Firefox 10+ */
+			filter: gray;
+			/* IE6-9 */
+			-webkit-filter: grayscale(100%);
+			/* Chrome 19+ & Safari 6+ */
+			-webkit-transition: all .6s ease;
+			/* Fade to color for Chrome and Safari */
+			-webkit-backface-visibility: hidden;
+			/* Fix for transition flickering */
+		}
+
+		img.grayscale:hover {
+			filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+			-webkit-filter: grayscale(0%);
+		}
+
+		/******************************************
+/* MAIN3
+/*******************************************/
+
+		#main3 {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		#main3>div.border {
+			width: 100%;
+			display: flex;
+		}
+
+		#main3>div.border>ul {
+			width: 100%;
+			display: flex;
+			text-decoration: none;
+			padding: 0px 36px 0px 36px;
+		}
+
+		#main3>div:nth-child(2)>ul {
+			width: 100%;
+			display: flex;
+			text-decoration: none;
+			padding: 0;
+		}
+
+		#main3>div:nth-child(2)>ul>a {
+			width: 7%;
+			padding: 0px 12px 0px 12px;
+		}
+
+		#main3>div:nth-child(2)>span:nth-child(1)>a {
+			font-style: italic;
+			text-decoration: underline;
+		}
+
+		.contacts {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			padding: .5em;
+		}
+
+		#fname,
+		#lname {
+			width: 48%;
+			margin: 2px;
+			resize: none;
+			border-radius: 8px;
+			padding: 0.5rem;
+		}
+
+		textarea {
+			width: 100%;
+			min-height: 100px;
+			resize: none;
+			border-radius: 8px;
+			padding: 0.5rem;
+		}
+
+		#the-count {
+			float: right;
+			padding: 0.5rem;
+		}
+
+		#the-count>span {
+			font-size: medium;
+			color: grey;
+		}
+
+		#submitButton {
+			width: 98%;
+			resize: none;
+			border-radius: 8px;
+			padding: 0.5rem;
+		}
+
+		/******************************************
+/* FOOTER
+/*******************************************/
+
+		footer {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		footer>section {
+			width: 33.33333%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+
+		footer section {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		body>footer>section:nth-child(2)>a {
+			width: 1%;
+			font-size: xx-large;
+			align-self: center;
+
+		}
+
+		body>footer>section:nth-child(1)>span {
+			display: flex;
+			align-items: center;
+		}
+
+		.fa-brands,
+		.fab {
+			font-weight: 400;
+			font-size: xx-large;
+		}
+	</style>
+</head>
+
+<body>
+	<header id="top">
+		<nav>
+			<section class="border">
+				<ul>
+					<a
+						href="/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/mullings2023a_portfolio/index.html">Home</a>
+					<a href="#main1">About</a>
+					<a href="#main2">Projects</a>
+					<a href="img/bjmullings-resume2023.pdf" target="_blank">Resume</a>
+					<a href="#main3">Contact</a>
+				</ul>
 			</section>
-			<section id = "main2">
-				<div class = "border">
-					<ul>
-						<a href="" src="">Projects</a>
-					</ul>
-				</div>
-				<div class ="project">
-					<figure>
-						<a href = "/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/SLOT MACHINE/index.html"><img class = "grayscale" src ="img/slotsDemo.png"></a>
-						<figcaption>SLOT MACHINE</figcaption>
-					</figure>
-					<figure>
+			<div class="hamburger" onclick="toggleMenu()">
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>	<style>
+		* {
+			box-sizing: border-box;
+			background-color: rgb(25 25 0);
+			list-style: none;
+			color: white;
+			font-family: 'Courier New', Courier, monospace;
+		}
+
+		/* Clear fix hack */
+		.clearfix:after {
+			content: ".";
+			display: block;
+			clear: both;
+			visibility: hidden;
+			line-height: 0;
+			height: 0;
+		}
+
+		.clear {
+			clear: both;
+		}
+
+		/******************************************
+/* BASE STYLES
+/*******************************************/
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: auto;
+		}
+
+		section {
+			display: flex;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+
+		/******************************************
+/* LAYOUT
+/*******************************************/
+		.border {
+			border: white dotted 1px;
+		}
+
+		/******************************************
+/* NAV
+/*******************************************/
+		#top {
+			margin-bottom: 60px;
+		}
+		nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			background-color: rgb(25 25 0);
+			z-index: 9999;
+		}
+
+		nav a,
+		span {
+			color: white;
+			text-decoration: none;
+		}
+
+		nav span {
+			margin-block-start: 0.1em;
+			margin-block-end: 0.5em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			padding-inline-end: 40px;
+		}
+
+		nav ul {
+			width: 50%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		nav section {
+			width: 100%;
+			display: flex;
+		}
+
+		/* Hamburger menu styles */
+		.hamburger {
+			display: none;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			width: 40px;
+			height: 30px;
+			margin-right: 20px;
+		}
+
+		.hamburger .bar {
+			width: 100%;
+			height: 3px;
+			background-color: white;
+			margin-bottom: 5px;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		/* Responsive styles */
+		@media (max-width: 768px) {
+			nav ul {
+				display: none;
+				flex-direction: column;
+				align-items: center;
+				padding: 0;
+			}
+
+			nav ul li {
+				width: 100%;
+				text-align: center;
+				margin: 10px 0;
+			}
+
+			.hamburger {
+				display: flex;
+			}
+
+			.hamburger.open .bar:nth-child(2) {
+				opacity: 0;
+			}
+
+			.hamburger.open .bar:nth-child(1) {
+				transform: translateY(8px) rotate(45deg);
+			}
+
+			.hamburger.open .bar:nth-child(3) {
+				transform: translateY(-8px) rotate(-45deg);
+			}
+		}
+
+		@media (min-width: 769px) {
+			.hamburger {
+				display: none;
+			}
+
+			nav ul {
+				display: flex;
+			}
+		}
+
+		/******************************************
+/* MAIN1
+/*******************************************/
+
+		#main1 {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			padding: .5em;
+		}
+
+		#main1>p {
+			display: flex;
+			width: 100%;
+			padding: 0.25em 0em 0.25em 0em;
+			margin: 0;
+		}
+
+		#main1>p+p {
+			display: flex;
+			width: 100%;
+			justify-content: end;
+			margin: 0;
+		}
+
+		#main1>div {
+			width: 100%;
+			display: flex;
+			padding: 0.5em 0em 0.5em 0em;
+		}
+
+		#myMug {
+			max-width: 50%;
+			height: auto;
+			border-radius: 5%;
+		}
+
+		#main1>div>p {
+			width: 50%;
+			margin: 12px 56px 12px 56px;
+		}
+
+		/******************************************
+/* MAIN2
+/*******************************************/
+
+		#main2 {
+			width: 100%;
+			display: flex;
+			padding: 0.5em 0em 0.5em 0em;
+			flex-direction: column;
+		}
+
+		#main2>div:nth-child(1) {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0.5em;
+			border: white dotted 1px;
+		}
+
+		#main2 p {
+			margin: 12px 56px 12px 56px;
+		}
+
+		figure {
+			width: 50%;
+			margin: 0;
+			padding: 1em 0em 1em 0em;
+
+		}
+
+		figure img,
+		a {
+			display: flex;
+			width: 100%;
+			border-radius: 5%;
+		}
+
+		figcaption {
+			padding: .5em;
+		}
+
+		#main2>.project {
+			width: 100%;
+			display: flex;
+			padding: 0.5em;
+		}
+
+		#main2>div>ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			text-decoration: none;
+			padding: 0px 36px 0px 36px;
+		}
+
+		img.grayscale
+
+		/*{ https://www.karlhorky.com/2012/06/cross-browser-image-grayscale-with-css.html */
+			{
+			filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+			/* Firefox 10+ */
+			filter: gray;
+			/* IE6-9 */
+			-webkit-filter: grayscale(100%);
+			/* Chrome 19+ & Safari 6+ */
+			-webkit-transition: all .6s ease;
+			/* Fade to color for Chrome and Safari */
+			-webkit-backface-visibility: hidden;
+			/* Fix for transition flickering */
+		}
+
+		img.grayscale:hover {
+			filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+			-webkit-filter: grayscale(0%);
+		}
+
+		/******************************************
+/* MAIN3
+/*******************************************/
+
+		#main3 {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		#main3>div.border {
+			width: 100%;
+			display: flex;
+		}
+
+		#main3>div.border>ul {
+			width: 100%;
+			display: flex;
+			text-decoration: none;
+			padding: 0px 36px 0px 36px;
+		}
+
+		#main3>div:nth-child(2)>ul {
+			width: 100%;
+			display: flex;
+			text-decoration: none;
+			padding: 0;
+		}
+
+		#main3>div:nth-child(2)>ul>a {
+			width: 7%;
+			padding: 0px 12px 0px 12px;
+		}
+
+		#main3>div:nth-child(2)>span:nth-child(1)>a {
+			font-style: italic;
+			text-decoration: underline;
+		}
+
+		.contacts {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			padding: .5em;
+		}
+
+		#fname,
+		#lname {
+			width: 48%;
+			margin: 2px;
+			resize: none;
+			border-radius: 8px;
+			padding: 0.5rem;
+		}
+
+		textarea {
+			width: 100%;
+			min-height: 100px;
+			resize: none;
+			border-radius: 8px;
+			padding: 0.5rem;
+		}
+
+		#the-count {
+			float: right;
+			padding: 0.5rem;
+		}
+
+		#the-count>span {
+			font-size: medium;
+			color: grey;
+		}
+
+		#submitButton {
+			width: 98%;
+			resize: none;
+			border-radius: 8px;
+			padding: 0.5rem;
+		}
+
+		/******************************************
+/* FOOTER
+/*******************************************/
+
+		footer {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		footer>section {
+			width: 33.33333%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+
+		footer section {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		body>footer>section:nth-child(2)>a {
+			width: 1%;
+			font-size: xx-large;
+			align-self: center;
+
+		}
+
+		body>footer>section:nth-child(1)>span {
+			display: flex;
+			align-items: center;
+		}
+
+		.fa-brands,
+		.fab {
+			font-weight: 400;
+			font-size: xx-large;
+		}
+	</style>
+			  </div>
+		</nav>
+	</header>
+	<main>
+		<section id="main1">
+			<p>
+				Greetings, loved ones.<br>
+				I'm R&y.<br>
+			</p>
+			<p>
+				Like, Randy
+			</p>
+			<div>
+				<img id="myMug" src="img/headshot.jpeg" alt="My pretty mug."><img>
+				<p>
+					I'm Randy, a software developer who loves to design.<br>
+					<br>
+					I create cohesive and simple websites and projects using Javascript, React, and Node for a clean and
+					pleasant finish.<br>
+					<br>
+					In my free time, I love to be creative, whether it's making music, art, or writing.<br>
+					<br>
+					I want to combine my skills to make products that are both functional and visually appealing.<br>
+					<br>
+					Let's collaborate!
+				</p>
+			</div>
+		</section>
+		<section id="main2">
+			<div class="border">
+				<ul>
+					<a href="" src="">Projects</a>
+				</ul>
+			</div>
+			<div class="project">
+				<figure>
+					<a href="/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/SLOT MACHINE/index.html"
+						target="_blank">
+						<img class="grayscale" src="img/slotsDemo.png">
+					</a>
+					<figcaption>SLOT MACHINE</figcaption>
+				</figure>
+				<figure>
 					<p>
-						This project's goal was to create a slot machine with three reels and five outcomes for each reel.<br>
-						The money should update according to user input based on a set bet amount ranging from $5 to $100.<br>
+						This project's goal was to create a slot machine with three reels and five outcomes for each
+						reel.<br>
+						The money should update according to user input based on a set bet amount ranging from $5 to
+						$100.<br>
 						This project was created using HTML and CSS for the style, and Javascript for the behavior.<br>
 					</p>
-					</figure>
-				</div>
-				<div class ="project">
-					<figure>
-						<a href = "/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/TODO LIST/index.html"><img class = "grayscale" src ="img/todoDemo.png"></a>
-						<figcaption>TO DO LIST</figcaption>
-					</figure>
-					<figure>
+				</figure>
+			</div>
+			<div class="project">
+				<figure>
+					<a href="/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/TODO LIST/index.html"
+						target="_blank">
+						<img class="grayscale" src="img/todoDemo.png">
+					</a>
+					<figcaption>TO DO LIST</figcaption>
+				</figure>
+				<figure>
 					<p>
 						This project's goal was to create a simple and flexible to-do list.
-						It has the ability to allow users to mark completed tasks, clear completed tasks and clear all tasks.<br>
+						It has the ability to allow users to mark completed tasks, clear completed tasks, and clear all
+						tasks.<br>
 						This project was created using HTML and CSS for the style, and Javascript for the behavior.<br>
 					</p>
-					</figure>
-				</div>
-				<div class ="project">
-					<figure>
-						<a href = "/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/FACEBOOK/index.html"><img class = "grayscale" src ="img/facebookDemo.png"></a>
-						<figcaption>WEBSITE LAYOUT 1</figcaption>
-					</figure>
-					<figure>
+				</figure>
+			</div>
+			<div class="project">
+				<figure>
+					<a href="/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/FACEBOOK/index.html"
+						target="_blank">
+						<img class="grayscale" src="img/facebookDemo.png">
+					</a>
+					<figcaption>WEBSITE LAYOUT 1</figcaption>
+				</figure>
+				<figure>
 					<p>
-						This project's goal was to recreate the landing page of popular social media website 'Facebook.'<br>
+						This project's goal was to recreate the landing page of the popular social media website
+						'Facebook.'<br>
 						This was created using HTML, CSS, and the old college try.
 					</p>
-					</figure>
-				</div>
-				<div class ="project">
-					<figure>
-						<a href = "/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/BOSTON/index.html"><img class = "grayscale" src ="img/bostonDemo.png"></a>
-						<figcaption>WEBSITE LAYOUT 2</figcaption>
-					</figure>
-					<figure>
+				</figure>
+			</div>
+			<div class="project">
+				<figure>
+					<a href="/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/BOSTON/index.html"
+						target="_blank">
+						<img class="grayscale" src="img/bostonDemo.png">
+					</a>
+					<figcaption>WEBSITE LAYOUT 2</figcaption>
+				</figure>
+				<figure>
 					<p>
 						This project's goal was to recreate the layout of the newsletter site 'Boston.'<br>
-                        This was created using HTML, CSS, and my best efforts.<br>
+						This was created using HTML, CSS, and my best efforts.<br>
 					</p>
-					</figure>
-				</div>
-				<div class ="project">
-					<figure>
-						<a href = "/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/ATLANTIC/index.html"><img class = "grayscale" src ="img/atlanticDemo.png"></a>
-						<figcaption>WEBSITE LAYOUT 3</figcaption>
-					</figure>
-					<figure>
+				</figure>
+			</div>
+			<div class="project">
+				<figure>
+					<a href="/Users/bjmullings/Desktop/RESILIENT CODERS 2023a/WEEK06/PROJECTS/ATLANTIC/index.html"
+						target="_blank">
+						<img class="grayscale" src="img/atlanticDemo.png">
+					</a>
+					<figcaption>WEBSITE LAYOUT 3</figcaption>
+				</figure>
+				<figure>
 					<p>
-						This project's goal was to recreate the layout and responsiveness newsletter site 'The Atlantic.'<br>
+						This project's goal was to recreate the layout and responsiveness of the newsletter site 'The
+						Atlantic.'<br>
 						This was created using HTML, CSS, and a slew of media queries.
 					</p>
-					</figure>
-				</div>
-			</section>
-			<section id = "main3">
-				<div class = "border">
-					<ul>
-						<a href="" src="">Contact Me</a>
-					</ul>
-				</div>
-				<div class = "contacts">
-					<span>Shoot me an email: <a href="mailto: brandon.j.mullings@gmail.com"> brandon.j.mullings@gmail.com</a></span>
-					<span>Or follow my socials: </span>
-					<ul>
-						<a href="https://twitter.com/rampersandee"><i class="fa-brands fa-square-twitter"></i></a>
-						<a href="https://github.com/rampersandee"><i class="fa-brands fa-github"></i></a>
-						<a href="https://www.linkedin.com/in/brandon-mullings-967713b8/"><i class="fa-brands fa-linkedin"></i></a>
-					</ul>
-				</div>
-				<div class = "contacts">
-					<span>Or drop me a line right here: </span>
-					<form method='POST'><input type='hidden' name='form-name' value='form 1' />	
-                        <input type ="text" id ="fname" name ="firstname" placeholder="First name">
-                        <input type ="text" id ="lname" name ="lastname" placeholder="Last name">
-                        <textarea type ="text" name="textArea" id="textArea" maxlength="500" placeholder="Max char. : 500"></textarea>
-						<!-- <div id="the-count">
+				</figure>
+			</div>
+		</section>
+		<section id="main3">
+			<div class="border">
+				<ul>
+					<a href="" src="">Contact Me</a>
+				</ul>
+			</div>
+			<div class="contacts">
+				<span>Shoot me an email: <a href="mailto: brandon.j.mullings@gmail.com">
+						brandon.j.mullings@gmail.com</a></span>
+				<span>Or follow my socials: </span>
+				<ul>
+					<a href="https://twitter.com/rampersandee"><i class="fa-brands fa-square-twitter"></i></a>
+					<a href="https://github.com/rampersandee"><i class="fa-brands fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/brandon-mullings-967713b8/"><i
+							class="fa-brands fa-linkedin"></i></a>
+				</ul>
+			</div>
+			<div class="contacts">
+				<span>Or drop me a line right here: </span>
+				<form method='POST'><input type='hidden' name='form-name' value='form 1' />
+					<input type="text" id="fname" name="firstname" placeholder="First name">
+					<input type="text" id="lname" name="lastname" placeholder="Last name">
+					<textarea type="text" name="textArea" id="textArea" maxlength="500"
+						placeholder="Max char. : 500"></textarea>
+					<!-- <div id="the-count">
 							<span id="current">0</span>
 							<span id="maximum">/ 500</span>
 						  </div> -->
-						<input type ="submit" id ="submitButton" name ="userSubmit">
-					</form>
-				</div>
-			</section>
-		</main>
-		<footer class = "border">
-			<section>
-				<p>be easy</p>
-			</section>
-			<section>
-				<a href = "#top">↑</a>
-			</section>
-			<section>
-				<p>Copyright © 2023</p> 
-			</section>
-		</footer>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script src="https://kit.fontawesome.com/0672b027c3.js" crossorigin="anonymous"></script>
-	</body>
+					<input type="submit" id="submitButton" name="userSubmit">
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer class="border">
+		<section>
+			<p>be easy</p>
+		</section>
+		<section>
+			<a href="#top">↑</a>
+		</section>
+		<section>
+			<p>Copyright © 2023</p>
+		</section>
+	</footer>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		function toggleMenu() {
+			const nav = document.querySelector('nav ul');
+			const hamburger = document.querySelector('.hamburger');
+
+			nav.classList.toggle('open');
+			hamburger.classList.toggle('open');
+		}
+
+	</script>
+	<script src="https://kit.fontawesome.com/0672b027c3.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
